@@ -18,7 +18,7 @@ def score(x):
         elif x in s:
             B += 1
 
-    print("A", A, "B", B)
+    return A, B
 
 
 while True:
@@ -27,17 +27,19 @@ while True:
     if is_different(s):
         break
 
-print(s)
-
 x = input("please enter four number\n")
-
-
 while True:
     if len(x) == 4:
-        score(x)
-        break
+        A, B = score(x)
+        print("A", A, "B", B)
+        if A == 4:
+            print("good")
+            break
+
     elif is_different(x):
-        x = input("please enter four number\n")
+        print("please enter four different number")
 
     else:
-        print("please enter four number")
+        print("please enter number")
+
+    x = input("please enter four number\n")
